@@ -9,7 +9,7 @@ via [laminas/laminas-servicemanager](https://github.com/laminas/laminas-servicem
 
 ## How to install
 
-:warning: Please note that this package requires at least php 7.1.  
+:warning: Please note that this package requires at least php 7.3.  
 Install `eth8505/laminas-monolog` package via composer.
 
 ~~~bash
