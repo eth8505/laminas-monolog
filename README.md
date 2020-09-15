@@ -1,4 +1,4 @@
-# LaminasMonolog - ZF3 module integrating monolog with zend framework v3
+# LaminasMonolog - Laminas module integrating monolog with zend framework v3
 The **LaminasMonolog** module integrates [monolog/monolog](https://github.com/seldaek/monolog) as a zf3-module 
 via [laminas/laminas-servicemanager](https://github.com/laminas/laminas-servicemanager).
 
