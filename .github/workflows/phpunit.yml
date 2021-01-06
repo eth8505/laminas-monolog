@@ -4,7 +4,7 @@ on:
   - "pull_request"
   - "push"
 
-name: "CI"
+name: "phpunit"
 
 jobs:
   tests:
@@ -48,7 +48,7 @@ jobs:
         if: ${{ matrix.dependencies == 'highest' }}
         run: "composer update --no-interaction --no-progress --no-suggest --ignore-platform-req=php"
 
-      - name: "Install locked dependencies"
+      - name: "Install lowest dependencies"
         if: ${{ matrix.dependencies == 'lowest' }}
         run: "composer install --no-interaction --no-progress --no-suggest --ignore-platform-req=php"
 

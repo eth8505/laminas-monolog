@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "monolog/monolog": "^1.24 || ^2.0",
         "laminas/laminas-servicemanager": "^3.0",
         "laminas/laminas-stdlib": "^3.2"
