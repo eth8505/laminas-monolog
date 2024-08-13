@@ -14,9 +14,11 @@ use LaminasMonolog\Processor\ProcessorPluginManager;
 use Monolog\Formatter\ChromePHPFormatter;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
+use Monolog\Level;
 use Monolog\Processor\ProcessIdProcessor;
 use PHPUnit\Framework\TestCase;
 use Laminas\ServiceManager\ServiceManager;
+use Psr\Log\LogLevel;
 
 class LoggerAbstractFactoryTest extends TestCase
 {
@@ -196,7 +198,7 @@ class LoggerAbstractFactoryTest extends TestCase
         $container->setService('Config', [
             'monolog' => [
                 'defaults' => [
-                    'level' => 123
+                    'level' => Level::Alert
                 ],
                 'loggers' => [
                     'base' => [
@@ -226,7 +228,7 @@ class LoggerAbstractFactoryTest extends TestCase
 
         $factory = new LoggerAbstractFactory();
 
-        self::assertEquals(123, $factory($container, 'base')->getHandlers()[0]->getLevel());
+        self::assertEquals(Level::Alert, $factory($container, 'base')->getHandlers()[0]->getLevel());
 
     }
 
@@ -235,7 +237,7 @@ class LoggerAbstractFactoryTest extends TestCase
         $container->setService('Config', [
             'monolog' => [
                 'defaults' => [
-                    'level' => 123
+                    'level' => Level::Alert
                 ],
                 'loggers' => [
                     'base' => [
@@ -245,7 +247,7 @@ class LoggerAbstractFactoryTest extends TestCase
                                 'name' => StreamHandler::class,
                                 'options' => [
                                     'stream' => STDOUT,
-                                    'level' => 100
+                                    'level' => Level::Debug
                                 ]
                             ]
                         ]
@@ -266,7 +268,7 @@ class LoggerAbstractFactoryTest extends TestCase
 
         $factory = new LoggerAbstractFactory();
 
-        self::assertEquals(100, $factory($container, 'base')->getHandlers()[0]->getLevel());
+        self::assertEquals(Level::Debug, $factory($container, 'base')->getHandlers()[0]->getLevel());
 
     }
 
