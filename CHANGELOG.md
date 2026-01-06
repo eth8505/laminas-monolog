@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 2.0.1
+- Fix deprecation notices on PHP 8.4
+
 ## 2.0.0
 - Drop support for PHP <8.1
 - Drop support for monolog <3.0
