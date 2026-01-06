@@ -113,7 +113,7 @@ class LoggerAbstractFactory implements AbstractFactoryInterface
     /**
      * @inheritDoc
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, ?array $options = null)
     {
 
         $loggerFactory = $container->get(LoggerFactory::class);

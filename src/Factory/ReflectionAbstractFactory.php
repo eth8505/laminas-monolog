@@ -25,7 +25,7 @@ class ReflectionAbstractFactory implements AbstractFactoryInterface
      * @inheritDoc
      * @throws \ReflectionException
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, ?array $options = null)
     {
 
         if (!class_exists($requestedName)) {
